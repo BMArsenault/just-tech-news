@@ -1,4 +1,4 @@
-function signupFormHandler(event) {
+async function signupFormHandler(event) {
     event.preventDefault();
 
     const email = document.querySelector('#email-login').value.trim();
@@ -22,8 +22,6 @@ function signupFormHandler(event) {
     }
 }
   
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-
 async function signupFormHandler(event) {
     event.preventDefault();
   
@@ -44,8 +42,12 @@ async function signupFormHandler(event) {
        // check the response status
     if (response.ok) {
         console.log('success');
-      } else {
+    } else {
         alert(response.statusText);
-      }
     }
   }
+}
+
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
